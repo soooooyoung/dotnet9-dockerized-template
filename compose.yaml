@@ -1,0 +1,86 @@
+services:
+  apiserver:
+    restart: always
+    container_name: apiserver
+    build:
+      context: .
+      dockerfile: ./APIServer/Dockerfile
+    depends_on:
+      - db
+      - redis
+      - fluentd-forwarder
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8000
+      - ASPNETCORE_URLS=http://*:8000
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: "localhost:24227"
+        fluentd-async: "true"
+        tag: server.web
+    volumes:
+      - ./APIServer/Logs:/app/Logs
+  webclient:
+    container_name: webclient
+    build:
+      context: .
+      dockerfile: ./BlazorClient/Dockerfile
+    depends_on:
+      - apiserver
+    ports:
+      - "3000:80"
+    networks:
+      - backend
+
+  redis:
+    image: redis:7.4-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+  db:
+    build:
+      context: ./Database
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER: shanabunny
+      MYSQL_PASSWORD: 1234
+    ports:
+      - 3307:3306
+    networks:
+      - backend
+
+  fluentd-forwarder:
+    container_name: fluentd-forwarder
+    build:
+      context: ./FluentD/Forwarder
+    depends_on:
+      - fluentd-aggregator
+    networks:
+      - backend
+    ports:
+      - "24227:24224"
+
+  fluentd-aggregator:
+    container_name: fluentd-aggregator
+    build:
+      context: ./FluentD/Aggregator
+    depends_on:
+      - db
+    networks:
+      - backend
+    ports:
+      - "24225:24224"
+
+networks:
+  backend:
+    driver: bridge

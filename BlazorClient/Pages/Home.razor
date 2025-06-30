@@ -1,0 +1,29 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Authorization
+
+<PageTitle>Home</PageTitle>
+
+<AuthorizeView Context="auth">
+	<Authorized>
+		<FluentHeader Style="background-color:honeydew" Height="50">
+			<img src="images/logo_v1.png" height="50" />
+			<FluentSpacer />
+			<FluentProfileMenu Image="/images/profile.png"
+							   Status="@PresenceStatus.Available"
+							   HeaderLabel="Microsoft"
+							   Initials="BG"
+							   FullName="@auth.User.Identity?.Name"
+							   EMail="bill.gates@microsoft.com"/>
+		</FluentHeader> 
+		<FluentStack VerticalAlignment="@VerticalAlignment.Center"
+					 HorizontalAlignment="@HorizontalAlignment.Center"
+					 Orientation="@Orientation.Vertical"
+					 Style="height:100%; min-height:100vh; min-width:100vw">
+			<Roulette />
+		</FluentStack>
+	</Authorized>
+
+	<NotAuthorized>
+		<RedirectToLogin />
+	</NotAuthorized>
+</AuthorizeView>

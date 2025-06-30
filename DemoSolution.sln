@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIServer", "APIServer\APIServer.csproj", "{E97FA1FC-A443-4A89-AAB6-8CA70C2BC26B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClient", "BlazorClient\BlazorClient.csproj", "{14CAB9A7-96CC-458A-93A7-C62F822E35C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{0886600B-F8D0-47DA-889A-69E5B421A402}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E97FA1FC-A443-4A89-AAB6-8CA70C2BC26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97FA1FC-A443-4A89-AAB6-8CA70C2BC26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97FA1FC-A443-4A89-AAB6-8CA70C2BC26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97FA1FC-A443-4A89-AAB6-8CA70C2BC26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CAB9A7-96CC-458A-93A7-C62F822E35C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CAB9A7-96CC-458A-93A7-C62F822E35C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CAB9A7-96CC-458A-93A7-C62F822E35C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CAB9A7-96CC-458A-93A7-C62F822E35C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0886600B-F8D0-47DA-889A-69E5B421A402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0886600B-F8D0-47DA-889A-69E5B421A402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0886600B-F8D0-47DA-889A-69E5B421A402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0886600B-F8D0-47DA-889A-69E5B421A402}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE928FCF-A0C1-4774-BEC8-834C6B193E13}
+	EndGlobalSection
+EndGlobal

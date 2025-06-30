@@ -1,0 +1,20 @@
+﻿public enum ResultCode
+{
+	Success = 0,
+	UnknownError = 1,
+	UnhandledException = 2,
+	DbConnectionError = 3,
+	DbInsertAccountError = 4,
+	DbInsertAccountException = 5,
+	DbDeletionError = 6,
+	DbDeletionException = 7,
+	LoginErrorUserNotFound = 8,
+	LoginErrorPasswordMismatch = 9,
+	LoginException = 10,
+	LoginFailInvalidResponse = 11,
+	RegisterFail = 12,
+	RegisterFailException = 13,
+	SessionSetFail = 14,
+	SessionSetException = 15,
+	InvalidResponse = 16,
+}
