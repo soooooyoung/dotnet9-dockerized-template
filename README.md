@@ -23,7 +23,7 @@ ASP.NET Core 9 Web API Server. Hosts REST APIs for authentication and user regis
 - `LoginSerice`: Handles user login and token issuance.
 - `AccountService`: Manages account registration and basic user info.
 - `ChatService`: Provides OpenAI chat interaction endpoints.
-- `Session Management`: Uses [Redis]() to manage and validate user sessions.
+- `Session Management`: Uses [Redis](https://redis.io/) to manage and validate user sessions.
 - `Fluentd` logging management
 
 ## Blazor WebAssembly Client
@@ -35,9 +35,9 @@ A modern SPA frontend using Blazor WASM and Fluent UI, connecting to the API ser
 #### Features
 
 - Shared loading overlay with state management.
-- Token-based session control using [Blazored.LocalStorage]().
+- Token-based session control using [Blazored.LocalStorage](https://github.com/Blazored/LocalStorage).
 - Login, Register, and Home components with UI-driven navigation
-- Auth state tracking using [AuthenticationStateProvider]()
+- Auth state tracking using [AuthenticationStateProvider](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider?view=aspnetcore-9.0)
 
 ## Fluentd Integration
 
