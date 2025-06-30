@@ -61,7 +61,7 @@ Further details about Fluentd architecture, plugin setup, and buffering strategi
 
 ## How to Run
 
-You can launch the full stack with `docker compose up` command using the provided [compose.yaml](compose.yaml) file.
+You can launch the full stack with docker compose using the provided [compose.yaml](compose.yaml) file.
 
 To run the full stack locally:
 
@@ -69,7 +69,7 @@ To run the full stack locally:
 2. Run the following command:
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
-This will start all services in the background using Docker Compose.
+This will start all services in the background.
